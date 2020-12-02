@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "string.shortText",
+      "type": "java.lang.String",
+      "description": "Description for string.shortText."
+  }
+] }
