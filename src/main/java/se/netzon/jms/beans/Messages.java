@@ -26,6 +26,6 @@ public class Messages {
     }
 
     public String getAllText() {
-        return String.format("%s\n%s\n%s", greeting, shortText, longText);
+        return String.format("%s+%s+%s", greeting, shortText, longText);
     }
 }

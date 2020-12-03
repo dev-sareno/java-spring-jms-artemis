@@ -1,6 +1,5 @@
 package se.netzon.jms.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,8 +10,11 @@ import se.netzon.jms.services.ApiService;
 @RestController
 public class ApiController {
 
-    @Autowired
-    private ApiService apiService;
+    private final ApiService apiService;
+
+    public ApiController(ApiService apiService) {
+        this.apiService = apiService;
+    }
 
     @GetMapping({"/", "/greet"})
     public @ResponseBody
@@ -22,7 +24,7 @@ public class ApiController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @GetMapping({"/", "/shortText"})
+    @GetMapping("/shortText")
     public @ResponseBody
     ResponseEntity<String>
     getShortText() {

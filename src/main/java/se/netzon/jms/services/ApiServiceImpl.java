@@ -1,14 +1,16 @@
 package se.netzon.jms.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import se.netzon.jms.beans.Messages;
 
 @Service
 public class ApiServiceImpl implements ApiService {
 
-    @Autowired
-    private Messages messages;
+    private final Messages messages;
+
+    public ApiServiceImpl(Messages messages) {
+        this.messages = messages;
+    }
 
     @Override
     public String getIndexOrGreeting() {
