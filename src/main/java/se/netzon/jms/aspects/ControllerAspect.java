@@ -13,7 +13,8 @@ public class ControllerAspect {
     private final Logger logger = LoggerFactory.getLogger(ControllerAspect.class);
 
     /*
-    * Catch all route access
+    * Catch all route access.
+    * i.e. se.netzon.jms.controllers.ApiController.getShortText()
     * */
     @Before("execution(* se.netzon.jms.controllers.*Controller.*())")
     public void beforeRouteAccess(JoinPoint joinPoint) {
